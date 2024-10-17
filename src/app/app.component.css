@@ -1,0 +1,65 @@
+/* Ensure only one icon shows at a time */
+.navbar-toggler[aria-expanded="true"] .fa-bars {
+    display: none;
+  }
+  
+  .navbar-toggler[aria-expanded="true"] .fa-times {
+    display: inline-block;
+  }
+  
+  .navbar-toggler[aria-expanded="false"] .fa-times {
+    display: none;
+  }
+  
+  .navbar-toggler[aria-expanded="false"] .fa-bars {
+    display: inline-block;
+  }
+  
+  /* Remove borders and outlines from the navbar toggler button */
+.navbar-toggler {
+    border: none;        /* Remove border */
+    outline: none;       /* Remove outline */
+  }
+  
+  /* Font Awesome icons inside the toggler */
+  .navbar-toggler .fa {
+    margin: 0;          /* Ensure no margin */
+    padding: 0;         /* Ensure no padding */
+    font-size: 1.5rem;  /* Adjust icon size as needed */
+    color: inherit;     /* Inherit color from parent */
+  }
+  
+  /* Ensure only one icon shows at a time */
+  .navbar-toggler[aria-expanded="true"] .fa-bars {
+    display: none;
+  }
+  
+  .navbar-toggler[aria-expanded="true"] .fa-times {
+    display: inline-block;
+  }
+  
+  .navbar-toggler[aria-expanded="false"] .fa-times {
+    display: none;
+  }
+  
+  .navbar-toggler[aria-expanded="false"] .fa-bars {
+    display: inline-block;
+  }
+  
+  /* Remove hover/focus effects */
+  .navbar-toggler:hover,
+  .navbar-toggler:focus {
+    background-color: transparent;  /* No background color on hover or focus */
+    box-shadow: none;               /* Remove any box shadow */
+  }
+  
+  /* Optional: adjust the color on hover/focus */
+  .navbar-toggler:hover .fa,
+  .navbar-toggler:focus .fa {
+    color: inherit;                 /* Maintain the same color */
+  }
+
+  .navbar-nav .nav-link {
+    font-weight: 500; /* Set font weight to 500 */
+  }
+  

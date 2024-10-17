@@ -1,0 +1,50 @@
+<!-- create a div that show my login form alwayd center and reposive -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1 class="text-center">Login</h1>
+            <form class="form">
+                <div class="flex-column">
+                    <label>Email </label>
+                </div>
+                <div class="inputForm">
+                    <img src="assets/email.svg" alt="">
+                    <input type="text" class="input" placeholder="Enter your Email">
+                </div>
+
+                <div class="flex-column">
+                    <label>Password </label>
+                </div>
+                
+                <div class="inputForm">
+                    <img src="assets/lock.svg" alt="">
+                    <input type="password" class="input" placeholder="Enter your Password">
+                    <img src="assets/eye-icon.svg" alt="">
+                </div>
+
+                <div class="flex-row">
+                    <div>
+                        <input type="checkbox">
+                        <label>Remember me </label>
+                    </div>
+                    <span class="span" (click)="navigateToForgotPassword()">
+                        Forgot password?
+                    </span>
+                </div>
+
+                <button class="button-submit">Sign In</button>
+
+                <p class="p">Don't have an account?
+                    <span class="span" (click)="navigateToSignup()">Sign Up</span>
+                </p>
+                <p class="p line">Or With</p>
+                <div class="flex-row">
+                    <button class="btn google">
+                        <img src="assets/google.svg" alt="">
+                        Google
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
