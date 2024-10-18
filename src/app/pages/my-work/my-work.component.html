@@ -1,0 +1,149 @@
+<div class="custom-screen text-center">
+    <div class="home-screen-content mx-auto">
+        <h1 class="display-12 mx-auto">I have worked on various <span class="gradient-connect">Projects</span> utilizing
+            technologies such as:</h1>
+        <p class="lead text-gray mx-auto"> I have worked on a variety of projects that demonstrate my skills and
+            expertise in modern web development. Below are some of the key projects I’ve completed, showcasing my
+            proficiency in various technologies.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex">
+                    <div class="icon-wrapper border-warning">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <div class="ms-3 languages-text">
+                        <h4 class="h5 text-dark">Java Spring Boot</h4>
+                        <p class="mt-1">Utilized Spring Boot to create RESTful APIs for seamless backend integration in
+                            my projects.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex">
+                    <div class="icon-wrapper border-success">
+                        <i class="fa-brands fa-angular"></i>
+                    </div>
+                    <div class="ms-3 languages-text">
+                        <h4 class="h5 text-dark">Angular</h4>
+                        <p class="mt-1">Leveraged Angular for building responsive single-page applications with dynamic
+                            content.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex">
+                    <div class="icon-wrapper border-success">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <div class="ms-3 languages-text">
+                        <h4 class="h5 text-dark">MongoDB</h4>
+                        <p class="mt-1">Employed MongoDB for data storage, ensuring flexibility and easy scalability in
+                            my applications.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex">
+                    <div class="icon-wrapper border-success">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <div class="ms-3 languages-text">
+                        <h4 class="h5 text-dark">Vercel</h4>
+                        <p class="mt-1">Utilized Vercel for deploying static sites with optimal performance and
+                            serverless functions.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <ul class="list-unstyled">
+                <li class="d-flex">
+                    <div class="icon-wrapper border-warning">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                    </div>
+                    <div class="ms-3 languages-text main-color">
+                        <h4 class="h5 main-color">Netlify</h4>
+                        <p class="mt-1">Leveraged Netlify for quick deployments and hosting of my static web
+                            applications.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center mt-5">
+    <div class="home-screen-content mx-auto">
+        <h1 class="display-12 mx-auto">My Projects</h1>
+        <p class="lead text-gray mx-auto">I have worked on various projects that demonstrate my skills and expertise in
+            modern web development.</p>
+    </div>
+</div>
+
+<div class="projects-container">
+    <!-- <div *ngFor="let project of projects" class="project-card">
+        <section class="project-card__hero">
+            <header class="project-card__hero-header">
+                <span>{{ project.projectId }}</span>
+                <div class="project-card__icon">
+                    <img [src]="project.preview_img" [alt]="project.projectName" />
+                </div>
+            </header>
+            <p class="project-card__job-title">{{ project.projectName }}</p>
+        </section>
+
+        <footer class="project-card__footer">
+            <div class="project-card__job-summary">
+                <div class="project-card__job">
+                    <p class="project-card__job-title">Tech Stack: {{ project.tech_stack }}</p>
+                </div>
+            </div>
+
+            <div class="project-card__links">
+                <a [href]="project.github_url" target="_blank" class="project-card__btn">GitHub</a>
+                <a [href]="project.url" target="_blank" class="project-card__btn">Live Preview</a>
+            </div>
+        </footer>
+    </div> -->
+
+    <article class="card project-card" *ngFor="let project of projects">
+        <section class="card__hero">
+            <header class="card__hero-header">
+                <span>${{ project.projectId }}</span>
+                <div class="card__icon" (click)="navigateToGithub(project.github_url)">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </header>
+
+            <p class="card__job-title">{{ project.projectName }}</p>
+        </section>
+
+        <footer class="card__footer">
+            <div class="card__job-summary">
+                <div class="card__job-icon">
+                    <img src="assets/projects.png" height="40" width="40" alt="">
+                </div>
+                <div class="card__job">
+                    <span class="card__job-title main-color">
+                        {{ project.projectName }}
+                    </span>
+                </div>
+            </div>
+            <button class="card__btn" target="_blank" (click)="navigateToProject(project.url)">Preview</button>
+        </footer>
+    </article>
+</div>

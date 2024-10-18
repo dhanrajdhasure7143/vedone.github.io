@@ -1,0 +1,208 @@
+.display-12 {
+    font-size: 2rem;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1.5px  #e5e5e5 solid !important;
+}
+
+.icon-wrapper i{
+    font-size: 25px;
+}
+
+.text-dark {
+    color: #343a40;
+}
+
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .project-card {
+    margin: auto;
+    background-color: #fefefe;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: #141417;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-card__hero {
+    background-color: #fef4e2;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .project-card__job-title {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .project-card__hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    font-weight: 700;
+  }
+  
+  .project-card__footer {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  
+  .project-card__job-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .project-card__links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .project-card__btn {
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 1rem;
+    background-color: #141417;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 1200px) {
+    .projects-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .projects-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* From Uiverse.io by Creatlydev */ 
+.card {
+    margin: auto;
+    /* width: min(300px, 100%); */
+    width: 100%;
+    height: 100%;
+    background-color: #fefefe;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: #141417;
+  }
+  .card__hero {
+    background-color: #faecff;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    height: 100%;
+  }
+  .card__hero .card__job-title {
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-right: 2rem;
+  }
+  .card__hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    font-weight: 700;
+  }
+  .card__footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0.75rem;
+    row-gap: 1rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  @media (min-width: 340px) {
+    .card__footer {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+  .card__job-summary {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+  }
+  .card__btn {
+    width: 100%;
+    font-weight: 400;
+    border: none;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+  }
+  @media (min-width: 340px) {
+    .card__btn {
+      width: max-content;
+    }
+  }
+
+  .card__icon i{
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .card__job span{
+    font-size: 18px;
+  }
+  
+  
+

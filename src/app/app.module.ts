@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { SpinnerComponent } from './pages/services/spinner/spinner.component';
+import { MyWorkComponent } from './pages/my-work/my-work.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SpinnerComponent } from './pages/services/spinner/spinner.component';
     HomeComponent,
     ForgotPasswordComponent,
     SpinnerComponent,
+    MyWorkComponent,
   ],
   imports: [
     BrowserModule,

@@ -119,6 +119,20 @@ body {
     color: var(--primary-color);
     font-size: 32px;
   }
+
+  .main-color{
+    color: var(--primary-color);
+  }
+
+  .languages-text h4,
+  .languages-text p{
+    color: var(--primary-color) !important;
+    font-size: 18px;
+  }
+
+  .languages-text p{
+    font-size: 14px;
+  }
   
 
   /* Media queries */
