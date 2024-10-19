@@ -10,6 +10,9 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { SpinnerComponent } from './pages/services/spinner/spinner.component';
 import { MyWorkComponent } from './pages/my-work/my-work.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DemoComponent } from './pages/demo/demo.component';
+import { NewsComponent } from './pages/news/news.component';
+import { ToastComponent } from './pages/services/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     SpinnerComponent,
     MyWorkComponent,
     ContactComponent,
+    DemoComponent,
+    NewsComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,

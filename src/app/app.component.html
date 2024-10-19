@@ -16,10 +16,13 @@
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
+          <a class="nav-link" routerLink="/login" (click)="isExpanded = false">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/my-work">My work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/demo"><b>News</b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Portfolio</a>
@@ -31,6 +34,7 @@
     </div>
   </div>
 </nav>
+<app-toast></app-toast>
 <app-spinner></app-spinner>
 <router-outlet></router-outlet>
 

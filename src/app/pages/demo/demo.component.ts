@@ -1,60 +1,28 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { SpinnerService } from '../services/spinner.service';
+import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
 })
-export class RestApiServiceService {
+export class DemoComponent implements OnInit {
 
-  constructor() { }
+  newsList: any[] = [];
 
-  getProjects(): Observable<any[]> {
-    const dummyData = [
-      {
-        projectName: 'Ved One Chat App',
-        projectId: '001',
-        github_url: 'https://github.com/example/project-one',
-        url: 'https://project-one.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'Angular, Node.js'
-      },
-      {
-        projectName: 'Project Two',
-        projectId: '002',
-        github_url: 'https://github.com/example/project-two',
-        url: 'https://project-two.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'React, Firebase'
-      },
-      {
-        projectName: 'Project Three',
-        projectId: '003',
-        github_url: 'https://github.com/example/project-three',
-        url: 'https://project-three.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'Vue.js, Express.js'
-      },
-      {
-        projectName: 'Project Two',
-        projectId: '002',
-        github_url: 'https://github.com/example/project-two',
-        url: 'https://project-two.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'React, Firebase'
-      },
-      {
-        projectName: 'Project Three',
-        projectId: '003',
-        github_url: 'https://github.com/example/project-three',
-        url: 'https://project-three.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'Vue.js, Express.js'
-      }
-    ];
-    return of(dummyData);
+  constructor(
+    private spinnerService: SpinnerService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.getNews();
   }
 
-  getNewsList(): Observable<any> {
+  getNews() {
+    this.spinnerService.show();
+
     let newsList = [];
     for (let i = 0; i < 10; i++) {
       newsList.push({
@@ -78,7 +46,16 @@ export class RestApiServiceService {
         deleted_at: ""
       });
     }
-    return of(newsList);
+
+    this.newsList = newsList;
+
+    setTimeout(() => {
+      this.spinnerService.hide();
+    }, 1000);
+  }
+
+  navigateToNews(new_id: string) {
+    this.router.navigate(['/news'], { queryParams: { id: new_id } });
   }
 
 }
