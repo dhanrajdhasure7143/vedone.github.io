@@ -38,9 +38,9 @@ body {
     box-shadow: none;
   }
 
-  .navbar-collapse {
+  /* .navbar-collapse {
     padding-top: 25px;
-  }
+  } */
 
   .custom-screen {
     padding: 112px 16px;

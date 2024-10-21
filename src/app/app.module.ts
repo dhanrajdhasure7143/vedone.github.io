@@ -13,6 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ToastComponent } from './pages/services/toast/toast.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,14 @@ import { ToastComponent } from './pages/services/toast/toast.component';
     DemoComponent,
     NewsComponent,
     ToastComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
