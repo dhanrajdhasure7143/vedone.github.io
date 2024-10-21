@@ -3,20 +3,20 @@
 
         <div class="col-md-4 offset-md-4">
             <h1 class="text-center">Sign Up</h1>
-            <form class="form">
+            <form class="form" [formGroup]="signupForm">
                 <div class="flex-column">
                     <label>Name </label>
                 </div>
                 <div class="inputForm">
                     <img src="assets/user.svg" alt="">
-                    <input type="text" class="input" placeholder="Enter your Name" />
+                    <input type="text" class="input" formControlName="name" placeholder="Enter your Name" />
                 </div>
                 <div class="flex-column">
                     <label>Email </label>
                 </div>
                 <div class="inputForm">
                     <img src="assets/email.svg" alt="">
-                    <input type="text" class="input" placeholder="Enter your Email" />
+                    <input type="text" class="input" formControlName="email" placeholder="Enter your Email" />
                 </div>
 
                 <div class="flex-column">
@@ -24,10 +24,10 @@
                 </div>
                 <div class="inputForm">
                     <img src="assets/lock.svg" alt="">
-                    <input type="password" class="input" placeholder="Enter your Password" />
+                    <input type="password" class="input" formControlName="password" placeholder="Enter your Password" />
                 </div>
 
-                <button class="button-submit">Sign Up</button>
+                <button class="button-submit" (click)="onSignup()" [disabled]="signupForm.invalid">Sign Up</button>
                 <p class="p">Already have a account? <span class="span" (click)="navigateToLogin()">login</span></p>
                 <div class="flex-row">
                     <button class="btn google">
