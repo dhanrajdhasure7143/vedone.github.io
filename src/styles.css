@@ -149,3 +149,26 @@ body {
   @media (min-width: 992px) {
     
   }
+
+
+  .slide-border {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .slide-border::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: black;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    
+  }
+  
+  .slide-border:hover::after {
+    width: 100%;
+  }

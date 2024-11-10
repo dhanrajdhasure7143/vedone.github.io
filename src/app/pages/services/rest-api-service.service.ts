@@ -6,16 +6,19 @@ import { Observable, of } from 'rxjs';
 })
 export class RestApiServiceService {
 
+  apiUrl = 'https://shot.screenshotapi.net/screenshot?token=16FVS0R-V1P42CM-MYC7N9A-YW9X2DS&url=';
+  apiKey = '&token=16FVS0R-V1P42CM-MYC7N9A-YW9X2DS';
   constructor() { }
 
   getProjects(): Observable<any[]> {
     const dummyData = [
       {
-        projectName: 'Ved One Chat App',
+        projectName: 'Ved One Chat App for the COllege Student Community',
         projectId: '001',
         github_url: 'https://github.com/example/project-one',
-        url: 'https://project-one.com',
-        preview_img: 'https://via.placeholder.com/150',
+        url: 'https://vedone.netlify.app',
+        // GET https://shot.screenshotapi.net/screenshot?token=TOKEN&url=URL&[OPTIONS]
+        preview_img: `${this.apiUrl}https://vedone.netlify.app&full_page=true&output=image&file_type=png&wait_for_event=load`,
         tech_stack: 'Angular, Node.js'
       },
       {
