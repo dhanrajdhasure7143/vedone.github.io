@@ -8,6 +8,34 @@ export class RestApiServiceService {
 
   apiUrl = 'https://shot.screenshotapi.net/screenshot?token=16FVS0R-V1P42CM-MYC7N9A-YW9X2DS&url=';
   apiKey = '&token=16FVS0R-V1P42CM-MYC7N9A-YW9X2DS';
+  headlines = [
+    "Amazon Great Indian Festival offers up to 70% off on furniture!",
+    "Flipkart Big Billion Days sale: Unbeatable deals on electronics!",
+    "Exciting Diwali discounts on home decor items at Myntra!",
+    "Furniture Fest: Flat 50% off on select items this festive season!",
+    "Home Centre unveils huge Diwali offers on living room essentials!",
+    "Pepperfry announces Diwali Bonanza with discounts on all items!",
+    "MakeMyHome sale: Special discounts on furniture and decor!",
+    "Furniture Mega Sale: Get your dream sofa at half the price!",
+    "Home Decor Carnival: Add a new look to your space with 60% off!",
+    "Urban Ladder festive offers: Upto 80% off on selected items!"
+  ];
+
+  descriptions = [
+    "Upgrade your home this festive season with amazing discounts on top brands. Get up to 70% off on furniture and decor items during the Amazon Great Indian Festival!",
+    "Celebrate Diwali with special discounts on chairs, tables, sofas, and more! Limited time offers on all furniture essentials.",
+    "Add elegance to your home with exclusive festive offers on premium furniture. Avail discounts up to 80% this season!",
+    "Explore the latest offers on home decor and furniture. Diwali brings discounts that you can’t miss!",
+    "From living rooms to bedrooms, elevate your home with designer furniture at unbeatable prices.",
+    "Get ready for the festive season with new furniture for your home. Check out the latest discounts and celebrate Diwali with style!",
+    "Don’t miss out on exciting discounts on dining sets, sofas, and more. Celebrate this Diwali with amazing furniture offers!",
+    "Redesign your space at affordable prices! Check out our furniture sale with discounts just in time for Diwali.",
+    "Transform your home decor with limited-time offers on all furniture items. Celebrate Diwali with stylish and affordable furniture.",
+    "Discover a range of high-quality furniture and enjoy festive discounts this Diwali. Perfect for refreshing your space!"
+  ];
+
+
+
   constructor() { }
 
   getProjects(): Observable<any[]> {
@@ -60,11 +88,13 @@ export class RestApiServiceService {
   getNewsList(): Observable<any> {
     let newsList = [];
     for (let i = 0; i < 10; i++) {
+    const randomHeadline = this.headlines[Math.floor(Math.random() * this.headlines.length)];
+    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
       newsList.push({
-        Headline: `Amazon Great Indian Festival Diwali special offers on Godrej furniture ${i + 1}`,
-        Description: `The Amazon Great Indian Festival Diwali special brings unbeatable offers on Godrej furniture, with over 60% off on a wide range of products like chairs, beds, and more. Elevate your home decor with these incredible discounts during the festive season!`,
+        Headline: randomHeadline,
+        Description: randomDescription,
         Date: `19 Oct 2024, 03:00 PM IST`,
-        Image: "https://www.livemint.com/lm-img/img/2024/10/18/600x338/asjfn_1729250646097_1729250651080.png",
+        Image: "https://picsum.photos/600/338?random=${i + 1}",
         new_id: `jkdsncwjekvwivniwjedwaieucwecaiw${i + 1}xdf${i + 1}`,
         link: "",
         category: "E-Commerce",

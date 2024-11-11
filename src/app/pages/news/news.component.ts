@@ -54,6 +54,14 @@ export class NewsComponent implements OnInit {
       likes: 0,
       reported: false
   });
+
+  // // setInterval(() => {
+  // //   this.spinnerService.show();
+  // // }, 1000);
+
+  // setInterval(() => {
+  //   this.spinnerService.hide();
+  // }, 3000);
   }
 
   scrollToTop() {
@@ -65,13 +73,24 @@ export class NewsComponent implements OnInit {
     this.spinnerService.show();
     
     this.restApiService.getNewsList().subscribe((newsList) => {
-      // this.news = newsList[0];
+
+      newsList.forEach((news: any) => {
+        news.Image = `https://picsum.photos/600/338?random=${this.getRandomInt(1, 10)}`;
+      })
+
+      setTimeout(() => {
+         
+      }, 1000);
       this.latestNewsList = newsList
       this.moreNewsList = newsList
-      console.log("QFWQ",this.latestNewsList);
-      this.getNewsById(this.newsId);
       this.spinnerService.hide();
+      this.getNewsById(this.newsId);
+      
     });
+  }
+
+  getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   getNewsById(id: string) {

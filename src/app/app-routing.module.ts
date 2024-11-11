@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'my-work', component: MyWorkComponent},
   { path: 'contact-me', component: ContactComponent},
-  { path: 'demo', component: DemoComponent },
+  { path: 'news-home', component: DemoComponent },
   { path: 'news', component: NewsComponent },
 
 ];
