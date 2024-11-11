@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -34,56 +35,54 @@ export class RestApiServiceService {
     "Discover a range of high-quality furniture and enjoy festive discounts this Diwali. Perfect for refreshing your space!"
   ];
 
+  private apiUrlCountries = 'https://restcountries.com/v3.1';
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getProjects(): Observable<any[]> {
     const dummyData = [
       {
-        projectName: 'Ved One Chat App for the COllege Student Community',
+        projectName: 'ChatMate',
         projectId: '001',
         github_url: 'https://github.com/example/project-one',
         url: 'https://vedone.netlify.app',
         // GET https://shot.screenshotapi.net/screenshot?token=TOKEN&url=URL&[OPTIONS]
-        preview_img: `${this.apiUrl}https://vedone.netlify.app&full_page=true&output=image&file_type=png&wait_for_event=load`,
-        tech_stack: 'Angular, Node.js'
+        preview_img: `assets/ved-chat.png`,
+        tech_stack: 'HTML, CSS, JavaScript, Git, GitHub, Firebase, Bootstrap',
+        description: 'A chat application that allows users to create accounts and chat with each other in real-time.'
       },
       {
-        projectName: 'Project Two',
+        projectName: 'WeGallery',
         projectId: '002',
         github_url: 'https://github.com/example/project-two',
-        url: 'https://project-two.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'React, Firebase'
+        url: 'https://vedgallery.netlify.app',
+        preview_img: 'assets/ved-gallery.png',
+        tech_stack: 'HTML, CSS, JavaScript, Git, GitHub, Firebase, Bootstrap',
+        description: 'A web application that allows users to upload and view images.'
       },
       {
-        projectName: 'Project Three',
+        projectName: 'EduVault',
         projectId: '003',
         github_url: 'https://github.com/example/project-three',
-        url: 'https://project-three.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'Vue.js, Express.js'
+        url: 'https://ved-locker.netlify.app/',
+        preview_img: 'assets/document.png',
+        tech_stack: 'Vue.js, HTML, CSS, JavaScript, Git, GitHub, Firebase, Bootstrap',
+        description: 'An e-Vault platform that allows users to create, share, and view educational documents.'
       },
       {
-        projectName: 'Project Two',
-        projectId: '002',
-        github_url: 'https://github.com/example/project-two',
-        url: 'https://project-two.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'React, Firebase'
-      },
-      {
-        projectName: 'Project Three',
-        projectId: '003',
-        github_url: 'https://github.com/example/project-three',
-        url: 'https://project-three.com',
-        preview_img: 'https://via.placeholder.com/150',
-        tech_stack: 'Vue.js, Express.js'
+        projectName: 'Vedone',
+        projectId: '004',
+        github_url: 'https://github.com/example/project-four',
+        url: 'https://vedone.netlify.app',
+        preview_img: 'assets/vedone.png',
+        tech_stack: 'Angular, Java, Spring Boot, MySQL, Git, Github, TypeScript, Bootstrap, MongoDB',
+        description: 'A web application that combines news, projects, and events into one platform.'
       }
     ];
     return of(dummyData);
   }
+
 
   getNewsList(): Observable<any> {
     let newsList = [];
@@ -112,6 +111,14 @@ export class RestApiServiceService {
       });
     }
     return of(newsList);
+  }
+
+   getAllCountries(): Observable<any> {
+    return this.http.get(`${this.apiUrlCountries}/all`);
+  }
+
+  getCountryByName(name: string): Observable<any> {
+    return this.http.get(`${this.apiUrlCountries}/name/${name}`);
   }
 
 }

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/home">
       <!-- <img src="assets/logo.png" alt="Logo" height="30"> -->
       <h3 class="logo-text slide-border">Ved<span class="gradient-connect">O</span>ne</h3>
     </a>
@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav" style="gap: 5px;">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/login" (click)="isExpanded = false">Login</a>
@@ -50,7 +50,7 @@
         </li>
         <!-- News Dropdown End -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Portfolio</a>
+          <a class="nav-link" href="https://ddh1.netlify.app" target="_blank">Portfolio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link main-btn" routerLink="/contact-me">Lets talk</a>
