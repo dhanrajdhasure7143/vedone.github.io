@@ -1,7 +1,12 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="display-4">LATEST NEWS</h1>
+        <div class="col-md-8">
+            <h1 class="display-10">Latest News</h1>
+
+            <p>Stay ahead of the curve with the latest news, trends, and updates from the world of technology and
+                innovation. From AI and machine learning to cybersecurity and data analytics, we've got you covered.</p>
+            <!-- <p>Want to stay informed about the latest developments in your industry? Check out our latest news articles and updates below.</p> -->
+
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col" *ngFor="let item of newsList">
                     <div class="card news-item" (click)="navigateToNews(item.new_id)">
@@ -9,13 +14,57 @@
                         <div class="card-body news-content">
                             <h5 class="card-title news-title">{{item.Headline}}</h5>
                             <p class="card-text news-desc">{{item.Description}}</p>
-                            <p class="card-text news-author"><small class="text-muted">By {{item.author}} on {{item.Date}}</small></p>
-                            <a class="main-btn" >READ MORE</a>
+                            <p class="card-text news-author"><small class="text-muted">By {{item.author}} on
+                                    {{item.Date}}</small></p>
+                            <a class="main-btn">READ MORE</a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="text-center m-5">
+                <button class="btn main-btn" (click)="loadMore()">Load More</button>
+            </div>
+        </div>
+        <div class="col-md-4" style="gap: 10px;">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <!-- <h5 class="text-left">Affiliate</h5> -->
+                    <div class="card affiliate-card">
+                        <img src="https://getaawp.com/wp-content/uploads/can-i-use-amazon-product-photo-on-my-affiliate-website.png" class="card-img-top" alt="Amazon">
+                        <div class="card-body">
+                            <h5 class="card-title">Amazon</h5>
+                            <p class="card-text">Shop on Amazon and support us.</p>
+                            <a href="https://www.amazon.com" class="main-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h5 class="text-left">Categories</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let category of categoriesList">
+                            <a (click)="getNewsByCategory(category.category_id)">{{category.category_name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h5 class="text-left">Trending News</h5>
+                    <div class="card news-item" *ngFor="let item of trendingNewsList | slice:0:5" index="index">
+                        <img [src]="item.Image" class="card-img-top news-img" alt="...">
+                        <div class="card-body news-content">
+                            <h5 class="card-title news-title">{{item.Headline}}</h5>
+                            <!-- <p class="card-text news-desc">{{item.Description}}</p> -->
+                            <p class="card-text news-author"><small class="text-muted">By {{item.author}} on
+                                    {{item.Date}}</small></p>
+                            <a class="main-btn">READ MORE</a>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
     </div>
 </div>
-

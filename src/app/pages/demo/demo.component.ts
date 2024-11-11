@@ -11,6 +11,14 @@ import { RestApiServiceService } from '../services/rest-api-service.service';
 export class DemoComponent implements OnInit {
 
   newsList: any[] = [];
+  categoriesList: any[] = [
+    { category_id: 1, category_name: 'Technology' },
+    { category_id: 2, category_name: 'Sports' },
+    { category_id: 3, category_name: 'Entertainment' },
+    { category_id: 4, category_name: 'Politics' },
+    { category_id: 5, category_name: 'Business' },
+  ];
+  trendingNewsList: any[] = [];
 
   constructor(
     private spinnerService: SpinnerService,
@@ -19,7 +27,9 @@ export class DemoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getNewsList()
+    this.getNewsList();
+    this.getCategoriesList();
+    this.getTrendingNewsList();
   }
 
   getRandomInt(min: number, max: number) {
@@ -39,7 +49,29 @@ export class DemoComponent implements OnInit {
       this.newsList.forEach((news: any) => {
         news.Image = `https://picsum.photos/600/338?random=${this.getRandomInt(1, 100)}`;
       })
+
+      this.trendingNewsList = [...this.newsList];
       this.spinnerService.hide();
     });
+  }
+
+  getCategoriesList() {
+    // TO DO: implement logic to fetch categories list
+  }
+
+  getTrendingNewsList() {
+    // TO DO: implement logic to fetch trending news list
+  }
+
+  getNewsByCategory(categoryId: number): void {
+    // TO DO: implement logic to fetch news by category
+  }
+
+  loadMore() {
+    this.spinnerService.show();
+    setTimeout(() => {
+      this.newsList = this.newsList.concat(this.newsList);
+    },1000);
+    this.spinnerService.hide();
   }
 }
