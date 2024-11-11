@@ -14,6 +14,7 @@ import { DemoComponent } from './pages/demo/demo.component';
 import { NewsComponent } from './pages/news/news.component';
 import { ToastComponent } from './pages/services/toast/toast.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     NewsComponent,
     ToastComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
