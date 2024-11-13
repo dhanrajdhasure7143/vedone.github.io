@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SpinnerService } from '../services/spinner.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private formBuilder: FormBuilder,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    private router: Router
   ) { 
     this.loginForm = this.formBuilder.group({
       email:['',  [Validators.required, Validators.email]],
@@ -26,11 +28,13 @@ export class LoginComponent implements OnInit {
   }
 
   navigateToSignup() {
-    window.location.href = '/signup';
+    this.router.navigate(['/signup']);
   }
 
+  
+
   navigateToForgotPassword() {
-    window.location.href = '/forgot-password';
+    this.router.navigate(['/forgot-password']);
   }
 
   login() {

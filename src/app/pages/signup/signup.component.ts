@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SpinnerService } from '../services/spinner.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private spinnerService: SpinnerService,
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { 
     this.signupForm = this.fb.group({
       name: ['', Validators.required],
@@ -28,7 +30,7 @@ export class SignupComponent implements OnInit {
   }
 
   navigateToLogin() {
-    window.location.href = '/login';
+    this.router.navigate(['/login']);
   }
 
   onSignup() {
