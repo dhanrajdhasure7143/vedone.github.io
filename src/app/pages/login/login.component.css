@@ -154,13 +154,14 @@
     }
 
     /*  */
-  }.login-bg{
+  }
+  /* .login-bg{
       background: url("../../../assets/login-bg.jpg");
       background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
       height: 100vh;
-    }
+    } */
 
   @media only screen and (min-width: 992px) {
     .form {
