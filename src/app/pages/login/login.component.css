@@ -115,5 +115,56 @@
     border: 1px solid #2d79f3;
     ;
   }
+
   
+
+  .login-bg h3{
+    display: none;
+  }
+  
+  /* write media query */
+  
+  @media only screen and (max-width: 600px) {
+    .login-bg h3{
+      display: block;
+    }
+
+    login-bg{
+      background: none;
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    form h4{
+      /* display: none; */
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .form {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .form {
+      width: 100%;
+    }
+
+    /*  */
+  }.login-bg{
+      background: url("../../../assets/login-bg.jpg");
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+  @media only screen and (min-width: 992px) {
+    .form {
+      width: 100%;
+    }
+  }
       
