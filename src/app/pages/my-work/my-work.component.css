@@ -204,6 +204,27 @@
   .card__job span{
     font-size: 18px;
   }
+
+  .image-fluid-screen{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  @media only screen and (max-width: 760px) {
+    .home-screen-content .img-fluid-screen {
+      width: 100% !important;
+    }
+  }
+
+  /* @media only screen and (max-width: 400px) {
+    .card__hero .card__job-title {
+      font-size: 1.2rem;
+    }
+  } */
+
+
+
   
   
 
