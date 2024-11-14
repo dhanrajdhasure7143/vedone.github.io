@@ -15,6 +15,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { ToastComponent } from './pages/services/toast/toast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './pages/footer/footer.component';
+import { DigitalClockComponent } from './pages/digital-clock/digital-clock.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './pages/footer/footer.component';
     ToastComponent,
     SignupComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    DigitalClockComponent
   ],
   imports: [
     BrowserModule,

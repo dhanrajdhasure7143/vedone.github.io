@@ -7,7 +7,5 @@
   to = "/index.html"
   status = 200
 
-[
-functions
-]
+[functions]
   sitemap = true

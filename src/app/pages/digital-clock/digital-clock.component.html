@@ -1,0 +1,21 @@
+<div class="clock-container">
+    <div class="clock">
+        <div class="needle hour" [style.transform]="hourTransform"></div>
+        <div class="needle minute" [style.transform]="minuteTransform"></div>
+        <div class="needle second" [style.transform]="secondTransform"></div>
+        <div class="center-point"></div>
+    </div>
+
+    <div class="time">{{ timeDisplay }}</div>
+    <div class="date" [innerHTML]="dateDisplay"></div>
+</div>
+
+<footer>
+    <div class="content">
+        <button (click)="toggleDarkMode()" class="toggle">{{ darkModeText }}</button>
+        <p>
+            Created with ❤️ by
+            <a href="https://github.com/dhanrajdhasure7143" target="_blank" class="author">Dhanraj D. Hasure</a>
+        </p>
+    </div>
+</footer>
