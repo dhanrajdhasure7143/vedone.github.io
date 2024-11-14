@@ -17,15 +17,13 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.showSpinner();
+    this.showSpinner();
 
-    // setTimeout(() => {
-    //   this.hideSpinner();
-    // }, 500);
-    this.getCountryByName('india');
-    this.getContries()
-
-  
+    setTimeout(() => {
+      this.hideSpinner();
+    }, 1000);
+    // this.getCountryByName('india');
+    // this.getContries()
   }
 
   showSpinner() {

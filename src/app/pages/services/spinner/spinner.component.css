@@ -4,7 +4,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgb(0 53 255 / 20%);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
     align-items: center;
