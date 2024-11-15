@@ -71,7 +71,7 @@ export class DemoComponent implements OnInit {
     this.spinnerService.show();
     setTimeout(() => {
       this.newsList = this.newsList.concat(this.newsList);
-    },1000);
-    this.spinnerService.hide();
+      this.spinnerService.hide();
+    }, 1000);
   }
 }
