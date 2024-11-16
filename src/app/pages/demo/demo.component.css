@@ -3,3 +3,24 @@
     cursor: pointer !important;
     text-decoration: underline !important;
 }
+
+.modal-body {
+    text-align: center;
+}
+
+#qrcodeCanvas {
+    margin: 10px auto;
+}
+
+.news-item {
+    cursor: pointer;
+}
+
+.news-title {
+    font-weight: bold;
+}
+
+.news-img {
+    height: 200px;
+    object-fit: cover;
+}

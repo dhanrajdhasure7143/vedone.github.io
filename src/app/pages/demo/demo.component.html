@@ -9,14 +9,17 @@
 
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col" *ngFor="let item of newsList">
-                    <div class="card news-item" (click)="navigateToNews(item.new_id)">
+                    <div class="card news-item">
                         <img [src]="item.Image" class="card-img-top news-img" alt="...">
                         <div class="card-body news-content">
                             <h5 class="card-title news-title">{{item.Headline}}</h5>
                             <p class="card-text news-desc">{{item.Description}}</p>
                             <p class="card-text news-author"><small class="text-muted">By {{item.author}} on
                                     {{item.Date}}</small></p>
-                            <a class="main-btn">READ MORE</a>
+                            <a class="main-btn" (click)="navigateToNews(item.new_id)">READ MORE</a>
+                            <button class="main-btn" (click)="showQrCodeModal(item)" data-bs-toggle="modal" data-bs-target="#qrModal">
+                                Show QR
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -68,3 +71,22 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="qrModalLabel"><i>{{selectedNews?.Headline}}</i></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <app-qr-code [newsUrl]="selectedNewsUrl"></app-qr-code>
+          <p class="mt-3"> <a href="{{selectedNewsUrl}}" target="_blank" rel="noopener noreferrer" > {{selectedNewsUrl}}</a></p>
+          <button class="main-btn" (click)="copyToClipboard()">{{copied ? 'Copied!' : 'Copy Link'}}</button>
+        </div>
+      </div>
+    </div>
+</div>
+

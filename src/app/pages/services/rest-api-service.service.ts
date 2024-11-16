@@ -94,7 +94,7 @@ export class RestApiServiceService {
         Description: randomDescription,
         Date: `19 Oct 2024, 03:00 PM IST`,
         Image: "https://picsum.photos/600/338?random=${i + 1}",
-        new_id: `jkdsncwjekvwivniwjedwaieucwecaiw${i + 1}xdf${i + 1}`,
+        new_id: `one${i + 1}xdf${i + 1}`,
         link: "",
         category: "E-Commerce",
         subcategory: "furniture",

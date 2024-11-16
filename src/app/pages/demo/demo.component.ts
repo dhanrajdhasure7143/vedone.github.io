@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { SpinnerService } from '../services/spinner.service';
 import { Router } from '@angular/router';
 import { RestApiServiceService } from '../services/rest-api-service.service';
@@ -19,11 +19,13 @@ export class DemoComponent implements OnInit {
     { category_id: 5, category_name: 'Business' },
   ];
   trendingNewsList: any[] = [];
+  copied: boolean = false;
 
   constructor(
     private spinnerService: SpinnerService,
     private router: Router,
     private restApiService: RestApiServiceService,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -73,5 +75,25 @@ export class DemoComponent implements OnInit {
       this.newsList = this.newsList.concat(this.newsList);
       this.spinnerService.hide();
     }, 1000);
+  }
+
+  selectedNews: any = null;
+  selectedNewsUrl: string = '';
+
+  showQrCodeModal(news: any): void {
+    this.selectedNews = news;
+    this.selectedNewsUrl = `http://vedone.netlify.app/news?id=${news.new_id}`;
+    this.cdr.detectChanges();
+  }
+
+  copyToClipboard(): void {
+    if (this.selectedNewsUrl) {
+      navigator.clipboard.writeText(this.selectedNewsUrl);
+      this.copied = true;
+
+      setTimeout(() => {
+        this.copied = false;
+      }, 2000);
+    }
   }
 }

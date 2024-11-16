@@ -16,6 +16,7 @@ import { ToastComponent } from './pages/services/toast/toast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './pages/footer/footer.component';
 import { DigitalClockComponent } from './pages/digital-clock/digital-clock.component';
+import { QrCodeComponent } from './pages/qr-code/qr-code.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DigitalClockComponent } from './pages/digital-clock/digital-clock.compo
     SignupComponent,
     LoginComponent,
     FooterComponent,
-    DigitalClockComponent
+    DigitalClockComponent,
+    QrCodeComponent
   ],
   imports: [
     BrowserModule,

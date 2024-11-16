@@ -15,7 +15,7 @@ export class ToastComponent implements OnInit {
     ngOnInit() {
       this.toasts.push({ message: 'Test toast message!', type: 'success' });
       
-      console.log('Static toast added:', this.toasts);
+    //   console.log('Static toast added:', this.toasts);
         this.toastService.toastState$.subscribe((toast: Toast) => {
             this.toasts.push(toast);
             setTimeout(() => {
@@ -24,6 +24,6 @@ export class ToastComponent implements OnInit {
             }, 3000);
         });
 
-        console.log("Toast Component Called ",this.toasts);
+        // console.log("Toast Component Called ",this.toasts);
     }
 }
